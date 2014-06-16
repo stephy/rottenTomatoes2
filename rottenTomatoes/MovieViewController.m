@@ -8,11 +8,13 @@
 
 #import "MovieViewController.h"
 #import <AFNetworking/UIKit+AFNetworking.h>
+#import "AFHTTPRequestOperation.h"
 
 @interface MovieViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *movieTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *poster;
+@property (weak, nonatomic) IBOutlet UIImage *posterImage;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIView *view;
 
@@ -58,19 +60,34 @@
             [memoryCache setObject:downloadedData forKey:urlString];
         }
         
-        // NOW YOU CAN CREATE AN AVASSET OR UIIMAGE FROM THE FILE OR DATA
-        [self.poster setImageWithURL:[NSURL URLWithString:urlString]];
+        //load image
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *filePath =  [[paths objectAtIndex:0] stringByAppendingPathComponent:@"tempPath"];
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: urlString]];
+        
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        operation.outputStream = [NSOutputStream outputStreamToFileAtPath:filePath append:NO];
+        
+        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            self.posterImage = [UIImage imageWithData:[NSData dataWithContentsOfFile:filePath]];
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+        [operation setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+            [self.poster setImage:[UIImage imageWithData:[NSData dataWithContentsOfFile:filePath]]];
+            self.posterImage = [UIImage imageWithData:[NSData dataWithContentsOfFile:filePath]];
+            
+        }];
+        
+        [operation start];
+
+        
+        
     });
     
-    
-    //NSString *posterUrlThumbnail = [current objectForKey:@"posters"][@"original"];
-    
-    //make poster fade in
+    //make poster/image fade in
     self.poster.alpha = 0.0;
-    
-    //Asynchronously load the image
-    //[self.poster setImageWithURL:[NSURL URLWithString:urlString]];
-    
     
     [UIView animateWithDuration:0.5 animations:^{
         self.poster.alpha = 1;

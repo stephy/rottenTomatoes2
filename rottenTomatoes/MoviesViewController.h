@@ -11,6 +11,7 @@
 #import "MovieCell.h"
 #import "MovieViewController.h"
 
+
 //implementing a protocol (interface)
 @interface MoviesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 

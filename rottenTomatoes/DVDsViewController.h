@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Movie.h"
 #import "MovieCell.h"
-#import "DVDViewController.h"
 
 @interface DVDsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 

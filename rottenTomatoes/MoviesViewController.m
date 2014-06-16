@@ -10,6 +10,7 @@
 #import <AFNetworking/UIKit+AFNetworking.h>
 #import "MBProgressHUD.h"
 #import "Reachability.h"
+#import "AFHTTPRequestOperation.h"
 
 
 @interface MoviesViewController () {
@@ -257,4 +258,6 @@
 -(void)dismissKeyboard {
     [self.searchBar resignFirstResponder];
 }
+
+
 @end
