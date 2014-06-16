@@ -7,20 +7,72 @@
 //
 
 #import "AppDelegate.h"
+#import "MoviesViewController.h"
+#import "DVDsViewController.h"
 
 @implementation AppDelegate
+
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize tabBarController = _tabBarController;
+
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    // Override point for customization after application launch.
+    
+    MoviesViewController *vc = [[MoviesViewController alloc] initWithNibName:@"MoviesViewController" bundle:nil];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    DVDsViewController *dvc = [[DVDsViewController alloc] initWithNibName:@"DVDsViewController" bundle:nil];
+    UINavigationController *dnvc = [[UINavigationController alloc] initWithRootViewController:dvc];
+    
+    //creating tab bar navigation
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:nvc, dnvc, nil];
+    
+
+    NSString *nib = @"az_MoviesController";
+    //adding images to tabs
+   
+    UIImage *iconBoxOffice = [UIImage imageNamed:@"box-office.png"];
+    UIImage *iconDvds = [UIImage imageNamed:@"dvds.png"];
+    
+    UITabBar *tabBar = self.tabBarController.tabBar;
+    UITabBarItem *item0 = [tabBar.items objectAtIndex:0];
+    UITabBarItem *item1 = [tabBar.items objectAtIndex:1];
+
+    [item0 initWithTitle:@"Box Office" image:iconBoxOffice selectedImage:iconBoxOffice];
+    [item1 initWithTitle:@"Dvds" image:iconDvds selectedImage:iconDvds];
+    
+    
+    //changing nav bar color
+    //[[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x067AB5)];
+    
+    NSShadow *shadow = [[NSShadow alloc] init];
+   shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+   shadow.shadowOffset = CGSizeMake(0, 1);
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                          shadow, NSShadowAttributeName,
+                                                         [UIFont fontWithName:@"HelveticaNeue" size:21.0], NSFontAttributeName, nil]];
+
+    
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav.png"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+
+    self.window.rootViewController = self.tabBarController;
+    
+
     return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

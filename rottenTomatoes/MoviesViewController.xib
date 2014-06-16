@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoviesViewController">
+            <connections>
+                <outlet property="networkErrorView" destination="yVx-6Y-XVr" id="qIr-pL-35Z"/>
+                <outlet property="searchBar" destination="27Q-tG-MNo" id="Mcr-ea-gdJ"/>
+                <outlet property="tableView" destination="Nyu-Hl-jJH" id="Dvn-5X-RjE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Nyu-Hl-jJH">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <searchBar key="tableHeaderView" contentMode="redraw" id="27Q-tG-MNo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <color key="tintColor" red="0.51376216259999996" green="0.19289090719999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <outlet property="delegate" destination="-1" id="2b2-05-hqS"/>
+                        </connections>
+                    </searchBar>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="KCn-th-V02"/>
+                        <outlet property="delegate" destination="-1" id="oUa-lS-s8o"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yVx-6Y-XVr">
+                    <rect key="frame" x="0.0" y="60" width="320" height="53"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Network Error" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs8-fe-aZc">
+                            <rect key="frame" x="107" y="16" width="107" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.14645545244776101" green="0.12877033599208709" blue="0.67859135841836737" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Nyu-Hl-jJH" firstAttribute="trailing" secondItem="yVx-6Y-XVr" secondAttribute="trailing" id="Kqv-b9-ukH"/>
+                <constraint firstAttribute="trailing" secondItem="Nyu-Hl-jJH" secondAttribute="trailing" id="Sxf-1A-Gg1"/>
+                <constraint firstAttribute="bottom" secondItem="Nyu-Hl-jJH" secondAttribute="bottom" id="dP6-JD-4sg"/>
+                <constraint firstItem="Nyu-Hl-jJH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="m1n-xh-ctD"/>
+                <constraint firstItem="Nyu-Hl-jJH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rCE-RK-DJ7"/>
+                <constraint firstItem="Nyu-Hl-jJH" firstAttribute="leading" secondItem="yVx-6Y-XVr" secondAttribute="leading" id="stW-Sb-9Vd"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>
