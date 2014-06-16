@@ -38,10 +38,7 @@
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:nvc, dnvc, nil];
     
-
-    NSString *nib = @"az_MoviesController";
     //adding images to tabs
-   
     UIImage *iconBoxOffice = [UIImage imageNamed:@"box-office.png"];
     UIImage *iconDvds = [UIImage imageNamed:@"dvds.png"];
     
@@ -53,12 +50,12 @@
     [item1 initWithTitle:@"Dvds" image:iconDvds selectedImage:iconDvds];
     
     
-    //changing nav bar color
+    //changing nav bar color / looks
     //[[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x067AB5)];
     
     NSShadow *shadow = [[NSShadow alloc] init];
-   shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
-   shadow.shadowOffset = CGSizeMake(0, 1);
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 1);
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                           shadow, NSShadowAttributeName,

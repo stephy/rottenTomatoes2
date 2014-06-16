@@ -9,11 +9,6 @@
 /* Begin PBXBuildFile section */
 		975BB294194D08EC00401337 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 975BB293194D08EC00401337 /* Reachability.m */; };
 		975BB2B5194EC4CE00401337 /* DVDsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 975BB2B3194EC4CE00401337 /* DVDsViewController.m */; };
-		975BB2B6194EC4CE00401337 /* DVDsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 975BB2B4194EC4CE00401337 /* DVDsViewController.xib */; };
-		975BB2BA194EC5C400401337 /* DVDCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 975BB2B8194EC5C400401337 /* DVDCell.m */; };
-		975BB2BB194EC5C400401337 /* DVDCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 975BB2B9194EC5C400401337 /* DVDCell.xib */; };
-		975BB2BF194EC77E00401337 /* DVDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 975BB2BD194EC77E00401337 /* DVDViewController.m */; };
-		975BB2C0194EC77E00401337 /* DVDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 975BB2BE194EC77E00401337 /* DVDViewController.xib */; };
 		977C4DAB1944E2500030BE33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 977C4DAA1944E2500030BE33 /* Foundation.framework */; };
 		977C4DAD1944E2500030BE33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 977C4DAC1944E2500030BE33 /* CoreGraphics.framework */; };
 		977C4DAF1944E2500030BE33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 977C4DAE1944E2500030BE33 /* UIKit.framework */; };
@@ -59,13 +54,6 @@
 		975BB293194D08EC00401337 /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = rottenTomatoes/Reachability.m; sourceTree = "<group>"; };
 		975BB2B2194EC4CE00401337 /* DVDsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVDsViewController.h; sourceTree = "<group>"; };
 		975BB2B3194EC4CE00401337 /* DVDsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVDsViewController.m; sourceTree = "<group>"; };
-		975BB2B4194EC4CE00401337 /* DVDsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DVDsViewController.xib; sourceTree = "<group>"; };
-		975BB2B7194EC5C400401337 /* DVDCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVDCell.h; sourceTree = "<group>"; };
-		975BB2B8194EC5C400401337 /* DVDCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVDCell.m; sourceTree = "<group>"; };
-		975BB2B9194EC5C400401337 /* DVDCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DVDCell.xib; sourceTree = "<group>"; };
-		975BB2BC194EC77E00401337 /* DVDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVDViewController.h; sourceTree = "<group>"; };
-		975BB2BD194EC77E00401337 /* DVDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVDViewController.m; sourceTree = "<group>"; };
-		975BB2BE194EC77E00401337 /* DVDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DVDViewController.xib; sourceTree = "<group>"; };
 		977C4DA71944E2500030BE33 /* rottenTomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rottenTomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		977C4DAA1944E2500030BE33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		977C4DAC1944E2500030BE33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -190,13 +178,6 @@
 				977C4E45194529A50030BE33 /* Main.storyboard */,
 				975BB2B2194EC4CE00401337 /* DVDsViewController.h */,
 				975BB2B3194EC4CE00401337 /* DVDsViewController.m */,
-				975BB2B4194EC4CE00401337 /* DVDsViewController.xib */,
-				975BB2B7194EC5C400401337 /* DVDCell.h */,
-				975BB2B8194EC5C400401337 /* DVDCell.m */,
-				975BB2B9194EC5C400401337 /* DVDCell.xib */,
-				975BB2BC194EC77E00401337 /* DVDViewController.h */,
-				975BB2BD194EC77E00401337 /* DVDViewController.m */,
-				975BB2BE194EC77E00401337 /* DVDViewController.xib */,
 			);
 			path = rottenTomatoes;
 			sourceTree = "<group>";
@@ -307,13 +288,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				975BB2C0194EC77E00401337 /* DVDViewController.xib in Resources */,
 				977C4DB71944E2500030BE33 /* InfoPlist.strings in Resources */,
 				977C4DE31944E2A60030BE33 /* MoviesViewController.xib in Resources */,
 				D0F1D92A194EDF5900C84A37 /* box-office@.png in Resources */,
-				975BB2BB194EC5C400401337 /* DVDCell.xib in Resources */,
 				977C4DE81944ED7E0030BE33 /* MovieCell.xib in Resources */,
-				975BB2B6194EC4CE00401337 /* DVDsViewController.xib in Resources */,
 				977C4E46194529A50030BE33 /* Main.storyboard in Resources */,
 				977C4DF81945238C0030BE33 /* MovieViewController.xib in Resources */,
 				D0F1D92B194EDF5900C84A37 /* dvds.png in Resources */,
@@ -373,9 +351,7 @@
 			files = (
 				975BB294194D08EC00401337 /* Reachability.m in Sources */,
 				975BB2B5194EC4CE00401337 /* DVDsViewController.m in Sources */,
-				975BB2BA194EC5C400401337 /* DVDCell.m in Sources */,
 				977C4DC01944E2500030BE33 /* rottenTomatoes.xcdatamodeld in Sources */,
-				975BB2BF194EC77E00401337 /* DVDViewController.m in Sources */,
 				977C4DE71944ED7E0030BE33 /* MovieCell.m in Sources */,
 				977C4DF11945093E0030BE33 /* Movie.m in Sources */,
 				977C4DF71945238C0030BE33 /* MovieViewController.m in Sources */,

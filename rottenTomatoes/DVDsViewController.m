@@ -7,6 +7,7 @@
 //
 
 #import "DVDsViewController.h"
+#import "MovieViewController.h"
 #import <AFNetworking/UIKit+AFNetworking.h>
 #import "MBProgressHUD.h"
 #import "Reachability.h"
@@ -28,7 +29,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:@"DVDsViewController" bundle:nibBundleOrNil];
+    self = [super initWithNibName:@"MoviesViewController" bundle:nibBundleOrNil];
     if (self) {
         //title for main navigation controller
         self.title = @"DVDs";
@@ -58,7 +59,7 @@
     
     //load personalized cell
     //registration process
-    [self.tableView registerNib:[UINib nibWithNibName:@"DVDCell" bundle:nil] forCellReuseIdentifier:@"DVDCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil] forCellReuseIdentifier:@"MovieCell"];
     
     //set row height
     self.tableView.rowHeight = 120;
@@ -123,7 +124,7 @@
 //this is a personalized row view
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    DVDCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DVDCell"];
+    MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
     
     if (self.isFiltered) {
         //show filtered objects
@@ -148,18 +149,18 @@
 //on row click open detailed view
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //dismiss keyboard
-//    [self dismissKeyboard];
-//    Movie *movie;
-//    
-//    if (self.isFiltered) {
-//        movie = self.filteredMovies[indexPath.row];
-//    }else{
-//        movie = self.movies[indexPath.row];
-//    }
-//    
-//    DVDViewController *mvc = [[DVDViewController alloc] initWithNibName:@"DVDViewController" bundle:[NSBundle mainBundle]];
-//    mvc.currentMovie = movie;
-//    [self.navigationController pushViewController:mvc animated:YES];
+    [self dismissKeyboard];
+    Movie *movie;
+    
+    if (self.isFiltered) {
+        movie = self.filteredMovies[indexPath.row];
+    }else{
+        movie = self.movies[indexPath.row];
+    }
+    
+    MovieViewController *mvc = [[MovieViewController alloc] initWithNibName:@"MovieViewController" bundle:[NSBundle mainBundle]];
+    mvc.currentMovie = movie;
+    [self.navigationController pushViewController:mvc animated:YES];
 }
 
 
@@ -219,28 +220,28 @@
     if (internet) {
         NSLog(@"internet ok");
         //add loader
-//        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-//            //load data from rotten tomattoes
-//            //set up network call
-//            NSString *url = @"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=g9au4hv6khv6wzvzgt55gpqs";
-//            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-//            
-//            //callback
-//            [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-//                id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-//                
-//                self.movies = object[@"movies"];
-//                //without this table loads empty
-//                
-//                [self.tableView reloadData];
-//                
-//            }];
-//            
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            });
-//        });
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+            //load data from rotten tomattoes
+            //set up network call
+            NSString *url = @"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=g9au4hv6khv6wzvzgt55gpqs";
+            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+            
+            //callback
+            [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                
+                self.movies = object[@"movies"];
+                //without this table loads empty
+                
+                [self.tableView reloadData];
+                
+            }];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            });
+        });
         
     }//end of if
     else{

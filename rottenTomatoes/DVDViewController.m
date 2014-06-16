@@ -16,7 +16,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:@"DVDViewController" bundle:nibBundleOrNil];
+    self = [super initWithNibName:@"MovieViewController" bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
