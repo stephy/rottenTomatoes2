@@ -60,7 +60,7 @@
             [memoryCache setObject:downloadedData forKey:urlString];
         }
         
-        //load image
+        //load image 
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *filePath =  [[paths objectAtIndex:0] stringByAppendingPathComponent:@"tempPath"];
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: urlString]];

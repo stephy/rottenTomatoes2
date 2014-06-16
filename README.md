@@ -23,3 +23,5 @@ Completed user stories:
 
 * [x] Must use Cocoapods.
 * [x] Asynchronous image downloading must be implemented using the UIImageView category in the AFNetworking library.
+
+![alt tag](https://raw.githubusercontent.com/stephy/rottenTomatoes2/master/rottenTomatoes.gif)

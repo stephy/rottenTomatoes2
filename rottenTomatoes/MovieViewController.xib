@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -63,7 +63,7 @@
                                 <constraint firstItem="IhN-vn-4WJ" firstAttribute="top" secondItem="RUn-XO-UMw" secondAttribute="bottom" constant="17" id="Z6Z-sa-ZIf"/>
                                 <constraint firstItem="RUn-XO-UMw" firstAttribute="leading" secondItem="xxw-Xy-x67" secondAttribute="leading" constant="20" symbolic="YES" id="jbu-mK-XIV"/>
                                 <constraint firstAttribute="bottom" secondItem="IhN-vn-4WJ" secondAttribute="bottom" constant="142" id="mk0-gp-toA"/>
-                                <constraint firstAttribute="height" priority="500" constant="512" id="tRD-fF-8ff"/>
+                                <constraint firstAttribute="height" priority="512" constant="512" id="tRD-fF-8ff"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -84,12 +84,16 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="NXD-W1-0MU" firstAttribute="top" secondItem="v0b-Ga-xSU" secondAttribute="top" id="0Oc-21-6Rn"/>
+                <constraint firstItem="NXD-W1-0MU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2U7-Nz-56k"/>
                 <constraint firstAttribute="trailing" secondItem="NXD-W1-0MU" secondAttribute="trailing" id="7tA-cz-gXe"/>
                 <constraint firstItem="NXD-W1-0MU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ADY-OI-A1i"/>
                 <constraint firstItem="v0b-Ga-xSU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="B8k-eB-quD"/>
+                <constraint firstItem="v0b-Ga-xSU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Jxf-RZ-JQM"/>
+                <constraint firstAttribute="bottom" secondItem="NXD-W1-0MU" secondAttribute="bottom" id="KLa-IM-z4E"/>
                 <constraint firstItem="NXD-W1-0MU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Npy-Ff-gi8"/>
                 <constraint firstAttribute="bottom" secondItem="v0b-Ga-xSU" secondAttribute="bottom" id="Oac-lI-twS"/>
                 <constraint firstItem="NXD-W1-0MU" firstAttribute="bottom" secondItem="v0b-Ga-xSU" secondAttribute="bottom" id="Qbo-uJ-zcb"/>
+                <constraint firstAttribute="bottom" secondItem="v0b-Ga-xSU" secondAttribute="bottom" id="RGu-oU-8Px"/>
                 <constraint firstAttribute="trailing" secondItem="NXD-W1-0MU" secondAttribute="trailing" id="UyW-th-a80"/>
                 <constraint firstItem="v0b-Ga-xSU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZGY-AG-NX4"/>
                 <constraint firstAttribute="trailing" secondItem="v0b-Ga-xSU" secondAttribute="trailing" id="h2a-ZT-lst"/>
